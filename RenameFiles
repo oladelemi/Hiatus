@@ -1,0 +1,22 @@
+""" this program renames a bunch of files in a specified folder as specified by User"""
+  
+import os
+
+
+# importing os module
+
+# Function to rename multiple files
+def main():
+    path = input("enter directory containing files, if current folder enter '/': ")
+
+    text = input("enter string to remove: ")
+
+    for filename in os.listdir(path):
+         if filename.startswith(text):
+            print(filename)
+            os.rename(filename, filename.replace(text, "",1))
+          
+
+#Driver Function 
+if __name__ == '__main__':
+    main()
